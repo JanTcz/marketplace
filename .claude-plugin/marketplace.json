@@ -7,7 +7,7 @@
   },
   "plugins": [
     {
-      "name": "microkanban",
+      "name": "cli-kanban",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/JanTcz/cli-kanban.git",

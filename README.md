@@ -7,7 +7,7 @@ Every plugin lives in its own repository; this one only lists them.
 
 | Plugin | What it does | Repository |
 |---|---|---|
-| **microkanban** | A kanban board of Markdown files in your repository. The agent picks up a ticket, moves it through todo, doing, testing and done, ticks its acceptance criteria and writes down decisions. Skill + MCP server. | [JanTcz/cli-kanban](https://github.com/JanTcz/cli-kanban) |
+| **cli-kanban** | A kanban board of Markdown files in your repository. The agent picks up a ticket, moves it through todo, doing, testing and done, ticks its acceptance criteria and writes down decisions. Skill + MCP server. | [JanTcz/cli-kanban](https://github.com/JanTcz/cli-kanban) |
 
 ## Install
 
@@ -15,11 +15,11 @@ Every plugin lives in its own repository; this one only lists them.
 
 ```
 /plugin marketplace add JanTcz/marketplace
-/plugin install microkanban@jantcz
+/plugin install cli-kanban@jantcz
 ```
 
 or from a shell: `claude plugin marketplace add JanTcz/marketplace`, then
-`claude plugin install microkanban@jantcz`.
+`claude plugin install cli-kanban@jantcz`.
 
 ### Codex
 
@@ -30,7 +30,7 @@ codex plugin marketplace add JanTcz/marketplace
 then enable the plugin in the plugin list, or in `.codex/config.toml`:
 
 ```toml
-[plugins."microkanban@jantcz"]
+[plugins."cli-kanban@jantcz"]
 enabled = true
 ```
 
