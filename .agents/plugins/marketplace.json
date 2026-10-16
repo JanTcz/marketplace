@@ -1,0 +1,21 @@
+{
+  "name": "jantcz",
+  "interface": {
+    "displayName": "JanTcz tools"
+  },
+  "plugins": [
+    {
+      "name": "microkanban",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/JanTcz/cli-kanban.git",
+        "path": "./agents"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

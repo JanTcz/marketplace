@@ -1,0 +1,9 @@
+{
+  "name": "jantcz-marketplace",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test": "node scripts/check.mjs"
+  }
+}
