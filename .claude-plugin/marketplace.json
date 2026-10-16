@@ -27,6 +27,17 @@
       "description": "Run the project's tests and get one JSON answer: counts and every failure with file, line and message; failures re-run alone to tell real from flaky.",
       "homepage": "https://github.com/JanTcz/cli-test-summary",
       "category": "development"
+    },
+    {
+      "name": "cli-transcriber",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/JanTcz/cli-transcriber.git",
+        "path": "agents"
+      },
+      "description": "Skills and agents written once as YAML with shared partials: a skill that keeps the agent editing the sources, and a hook that stops edits to the generated files.",
+      "homepage": "https://github.com/JanTcz/cli-transcriber",
+      "category": "development"
     }
   ]
 }

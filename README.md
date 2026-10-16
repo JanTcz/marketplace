@@ -9,6 +9,7 @@ Every plugin lives in its own repository; this one only lists them.
 |---|---|---|
 | **cli-kanban** | A kanban board of Markdown files in your repository. The agent picks up a ticket, moves it through todo, doing, testing and done, ticks its acceptance criteria and writes down decisions. Skill + MCP server. | [JanTcz/cli-kanban](https://github.com/JanTcz/cli-kanban) |
 | **cli-test-summary** | Runs the project's tests and answers with one JSON: counts and every failure with file, line and message, for node:test, vitest, jest, pytest, go, cargo and dotnet. Re-runs failures alone to tell real from flaky. Skill + MCP server. | [JanTcz/cli-test-summary](https://github.com/JanTcz/cli-test-summary) |
+| **cli-transcriber** | Skills and agents written once as YAML, with shared partials (parameters, nesting). The build checks that every partial, skill, agent and tool a source uses exists and is declared, then writes the Markdown. Skill + a Claude Code hook that stops edits to generated files. | [JanTcz/cli-transcriber](https://github.com/JanTcz/cli-transcriber) |
 
 ## Install
 
@@ -18,6 +19,7 @@ Every plugin lives in its own repository; this one only lists them.
 /plugin marketplace add JanTcz/marketplace
 /plugin install cli-kanban@jantcz
 /plugin install cli-test-summary@jantcz
+/plugin install cli-transcriber@jantcz
 ```
 
 or from a shell: `claude plugin marketplace add JanTcz/marketplace`, then
@@ -36,6 +38,9 @@ then enable the plugin in the plugin list, or in `.codex/config.toml`:
 enabled = true
 
 [plugins."cli-test-summary@jantcz"]
+enabled = true
+
+[plugins."cli-transcriber@jantcz"]
 enabled = true
 ```
 
