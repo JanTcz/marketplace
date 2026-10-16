@@ -16,6 +16,17 @@
       "description": "A kanban board of Markdown files in your repository: a skill for the agent and an MCP server to move tickets.",
       "homepage": "https://github.com/JanTcz/cli-kanban",
       "category": "productivity"
+    },
+    {
+      "name": "cli-test-summary",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/JanTcz/cli-test-summary.git",
+        "path": "agents"
+      },
+      "description": "Run the project's tests and get one JSON answer: counts and every failure with file, line and message; failures re-run alone to tell real from flaky.",
+      "homepage": "https://github.com/JanTcz/cli-test-summary",
+      "category": "development"
     }
   ]
 }

@@ -8,6 +8,7 @@ Every plugin lives in its own repository; this one only lists them.
 | Plugin | What it does | Repository |
 |---|---|---|
 | **cli-kanban** | A kanban board of Markdown files in your repository. The agent picks up a ticket, moves it through todo, doing, testing and done, ticks its acceptance criteria and writes down decisions. Skill + MCP server. | [JanTcz/cli-kanban](https://github.com/JanTcz/cli-kanban) |
+| **cli-test-summary** | Runs the project's tests and answers with one JSON: counts and every failure with file, line and message, for node:test, vitest, jest, pytest, go, cargo and dotnet. Re-runs failures alone to tell real from flaky. Skill + MCP server. | [JanTcz/cli-test-summary](https://github.com/JanTcz/cli-test-summary) |
 
 ## Install
 
@@ -16,10 +17,11 @@ Every plugin lives in its own repository; this one only lists them.
 ```
 /plugin marketplace add JanTcz/marketplace
 /plugin install cli-kanban@jantcz
+/plugin install cli-test-summary@jantcz
 ```
 
 or from a shell: `claude plugin marketplace add JanTcz/marketplace`, then
-`claude plugin install cli-kanban@jantcz`.
+`claude plugin install <plugin>@jantcz`.
 
 ### Codex
 
@@ -31,6 +33,9 @@ then enable the plugin in the plugin list, or in `.codex/config.toml`:
 
 ```toml
 [plugins."cli-kanban@jantcz"]
+enabled = true
+
+[plugins."cli-test-summary@jantcz"]
 enabled = true
 ```
 
