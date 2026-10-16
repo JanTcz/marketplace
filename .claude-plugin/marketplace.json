@@ -38,6 +38,17 @@
       "description": "Skills and agents written once as YAML with shared partials: a skill that keeps the agent editing the sources, and a hook that stops edits to the generated files.",
       "homepage": "https://github.com/JanTcz/cli-transcriber",
       "category": "development"
+    },
+    {
+      "name": "cli-proxmox",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/JanTcz/cli-proxmox.git",
+        "path": "agents"
+      },
+      "description": "Proxmox VE for coding agents: an MCP server whose tools are the proxmox CLI commands, scoped by an API token and a profile, read-only by default, on Proxmox's own API schema.",
+      "homepage": "https://github.com/JanTcz/cli-proxmox",
+      "category": "development"
     }
   ]
 }
