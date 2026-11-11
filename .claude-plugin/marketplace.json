@@ -49,6 +49,17 @@
       "description": "Proxmox VE for coding agents: an MCP server whose tools are the proxmox CLI commands, scoped by an API token and a profile, read-only by default, on Proxmox's own API schema.",
       "homepage": "https://github.com/JanTcz/cli-proxmox",
       "category": "development"
+    },
+    {
+      "name": "md-explorer",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/JanTcz/md-explorer-plugin.git",
+        "path": "agents"
+      },
+      "description": "Read a folder of Markdown docs in the browser (tree, search, rendered view) and copy a precise reference to any section or line to hand to Claude; Claude can read your selection and point you to a place.",
+      "homepage": "https://github.com/JanTcz/md-explorer-plugin",
+      "category": "productivity"
     }
   ]
 }
