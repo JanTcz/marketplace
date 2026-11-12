@@ -9,11 +9,14 @@ const errors = [];
 const fail = (msg) => errors.push(msg);
 
 if (claude.name !== codex.name) fail(`marketplace names differ: ${claude.name} / ${codex.name}`);
-const names = (m) => m.plugins.map((p) => p.name).sort().join(', ');
-if (names(claude) !== names(codex)) fail(`plugins differ: Claude Code [${names(claude)}], Codex [${names(codex)}]`);
+// Plugins that exist for Claude Code only (no .codex-plugin manifest).
+const CLAUDE_ONLY = new Set(['md-explorer']);
+const names = (m, skip = new Set()) => m.plugins.map((p) => p.name).filter((n) => !skip.has(n)).sort().join(', ');
+if (names(claude, CLAUDE_ONLY) !== names(codex)) fail(`plugins differ: Claude Code [${names(claude)}], Codex [${names(codex)}]`);
 
-/** The raw URL of a file in a git-subdir source on GitHub. */
+/** The raw URL of a file in a github (whole repository) or git-subdir source on GitHub. */
 function rawUrl(source, file) {
+  if (source.source === 'github') return `https://raw.githubusercontent.com/${source.repo}/${source.sha ?? source.ref ?? 'HEAD'}/${file}`;
   const m = /^(?:https:\/\/github\.com\/)?([\w.-]+\/[\w.-]+?)(?:\.git)?$/.exec(source.url);
   if (!m) throw new Error(`not a GitHub repository: ${source.url}`);
   const dir = source.path.replace(/^\.\//, '').replace(/\/$/, '');
@@ -22,8 +25,8 @@ function rawUrl(source, file) {
 
 async function checkManifest(entry, manifest, agent) {
   const { source } = entry;
-  if (typeof source !== 'object' || source.source !== 'git-subdir') {
-    fail(`${agent} ${entry.name}: expected a git-subdir source`);
+  if (typeof source !== 'object' || !['git-subdir', 'github'].includes(source.source)) {
+    fail(`${agent} ${entry.name}: expected a git-subdir or github source`);
     return;
   }
   const url = rawUrl(source, manifest);
